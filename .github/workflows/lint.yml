@@ -17,6 +17,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install env
+        run: make install
+
       # Runs the flake8 action
       - name: Run flake8
         run: make lint
