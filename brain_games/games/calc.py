@@ -1,22 +1,24 @@
 import random
 
+INTRO = 'What is the result of the expression?'
 NUMBER_RANGE = 1, 99
-OPS = ('+', '-', '*')
+OPERATIONS = ('+', '-', '*')
 
 
-def get_currect_answer(num1, num2, op):
-    if op == '+':
-        return num1 + num2
-    elif op == '-':
-        return num1 - num2
-    return num1 * num2
+def solve_expression(number1, number2, operation):
+    if operation == '+':
+        return number1 + number2
+    elif operation == '-':
+        return number1 - number2
+    elif operation == '*':
+        return number1 * number2
+    raise Exception('Invalid operation "{0}"'.format(operation))
 
 
 def get_question_and_answer():
-    num1 = random.randint(*NUMBER_RANGE)
-    num2 = random.randint(*NUMBER_RANGE)
-    op = random.choice(OPS)
-    return (
-        '{0} {1} {2}'.format(num1, op, num2),
-        get_currect_answer(num1, num2, op),
-    )
+    number1 = random.randint(*NUMBER_RANGE)
+    number2 = random.randint(*NUMBER_RANGE)
+    operation = random.choice(OPERATIONS)
+    question = '{0} {1} {2}'.format(number1, operation, number2)
+    answer = solve_expression(number1, number2, operation)
+    return question, str(answer)

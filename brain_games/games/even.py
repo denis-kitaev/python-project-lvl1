@@ -1,5 +1,6 @@
 import random
 
+INTRO = 'Answer "yes" if the number is even, otherwise answer "no".'
 NUMBER_RANGE = 1, 99
 
 
@@ -11,4 +12,5 @@ def get_is_even_answer(number):
 
 def get_question_and_answer():
     number = random.randint(*NUMBER_RANGE)
-    return number, get_is_even_answer(number)
+    answer = get_is_even_answer(number)
+    return number, answer
