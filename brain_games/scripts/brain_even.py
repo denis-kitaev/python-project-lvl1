@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 """Brain entry point."""
-from brain_games.game import run
-from brain_games.games.even import INTRO, get_question_and_answer
+from brain_games.games.even import run_game
 
 
 def main():
     """Входная точка в Brain."""
-    run(INTRO, get_question_and_answer)
+    run_game()
 
 
 if __name__ == '__main__':

@@ -1,5 +1,7 @@
 import random
 
+from brain_games.engine import run
+
 INTRO = 'Find the greatest common divisor of given numbers.'
 NUMBER_RANGE = 1, 99
 
@@ -19,3 +21,7 @@ def get_question_and_answer():
     question = '{0} {1}'.format(num1, num2)
     answer = get_gcd(num1, num2)
     return question, str(answer)
+
+
+def run_game():
+    run(INTRO, get_question_and_answer)
